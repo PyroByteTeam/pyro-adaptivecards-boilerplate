@@ -2,10 +2,9 @@ Config = {}
 
 -- Card background images
 Config.Images = {
-    default = "https://via.placeholder.com/500x300",
-    login = "https://via.placeholder.com/500x300",
-    profile = "https://via.placeholder.com/500x300",
-    menu = "https://via.placeholder.com/500x300"
+    mainMenu = "https://upload.wikimedia.org/wikipedia/commons/e/ef/StarfieldSimulation004.gif",
+    loginForm = "https://upload.wikimedia.org/wikipedia/commons/e/ef/StarfieldSimulation004.gif",
+    welcomeScreen = "https://upload.wikimedia.org/wikipedia/commons/e/ef/StarfieldSimulation004.gif"
 }
 
 -- Card styles

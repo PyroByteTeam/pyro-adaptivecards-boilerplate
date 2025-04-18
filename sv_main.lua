@@ -5,15 +5,6 @@
 local functions = LoadResourceFile(GetCurrentResourceName(), "functions.lua")
 load(functions)()
 
--- Configuration
-local Config = {
-    Images = {
-        mainMenu = "https://upload.wikimedia.org/wikipedia/commons/e/ef/StarfieldSimulation004.gif",
-        loginForm = "https://upload.wikimedia.org/wikipedia/commons/e/ef/StarfieldSimulation004.gif",
-        welcomeScreen = "https://upload.wikimedia.org/wikipedia/commons/e/ef/StarfieldSimulation004.gif"
-    }
-}
-
 -- Main connection handler
 AddEventHandler('playerConnecting', function(name, setKickReason, deferrals)
     local player = source
@@ -295,7 +286,7 @@ AddEventHandler('playerConnecting', function(name, setKickReason, deferrals)
                         status = "code_accepted"
                     else
                         status = "code_rejected"
-                        timeoutDuration = 5000 -- 5 seconds timeout
+                        timeoutDuration = Config.Timeouts.short -- 5 seconds timeout
                     end
                 elseif data.submitId == "submit_back" then
                     status = "main_menu"
