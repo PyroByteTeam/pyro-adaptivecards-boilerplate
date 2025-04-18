@@ -1,3 +1,6 @@
+[![GitBook](https://img.shields.io/badge/GitBook-%23000000.svg?style=for-the-badge&logo=gitbook&logoColor=white)](https://pyrobyte.gitbook.io/docs/)
+![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white)
+
 # PyroByte Adaptive Cards Boilerplate
 
 A simple boilerplate for implementing Adaptive Cards in FiveM scripts during the player connection process (deferrals).
@@ -27,6 +30,7 @@ This boilerplate provides examples of using Adaptive Cards with deferrals in Fiv
 3. **Success Message**: Standard deferral message for successful actions
 4. **Timeout Screen**: Countdown timer for failed attempts
 5. **Welcome Card**: Complex card with server information and rules acceptance
+6. **Styled Card**: Card that uses Config.Styles for consistent styling across the application
 
 ## Implementation Details
 
@@ -38,6 +42,7 @@ The boilerplate includes functions for creating different types of cards:
 - `CreateMultiActionCard`: Card with multiple action buttons
 - `CreateFormCard`: Card with input fields for user data
 - `CreateComplexCard`: Card with custom layout and visual elements
+- `CreateStyledCard`: Card that utilizes Config.Styles for consistent styling across the application
 
 ### Deferral Flow
 

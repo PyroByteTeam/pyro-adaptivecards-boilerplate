@@ -314,3 +314,68 @@ function CreateComplexCard(title, message, backgroundImage)
     
     return adaptiveCard
 end
+
+-- Styled card using Config.Styles
+-- Parameters:
+--   title: The main heading text for the card
+--   message: The descriptive text content
+--   styleName: Name of the style from Config.Styles (primary, secondary, success, danger, warning, info)
+--   buttonText: Text displayed on the action button
+--   buttonId: Unique identifier for the button (used in callback)
+--   backgroundImage: URL to the image used as background (optional)
+function CreateStyledCard(title, message, styleName, buttonText, buttonId, backgroundImage)
+    -- Get style configuration or use default if not found
+    local style = Config.Styles[styleName] or Config.Styles.primary
+    
+    local adaptiveCard = {
+        type = "AdaptiveCard",
+        body = {
+            {
+                type = "Container",
+                minHeight = "300px",
+                minWidth = "500px",
+                style = "default",
+                backgroundImage = backgroundImage,
+                items = {
+                    {
+                        type = "TextBlock",
+                        size = "medium",
+                        weight = "bolder",
+                        text = title,
+                        color = style.textColor == "#FFFFFF" and "light" or "dark",
+                        wrap = true,
+                        horizontalAlignment = "Center"
+                    },
+                    {
+                        type = "TextBlock",
+                        text = message,
+                        color = style.textColor == "#FFFFFF" and "light" or "dark",
+                        wrap = true,
+                        horizontalAlignment = "Center"
+                    },
+                    {
+                        type = "ActionSet",
+                        horizontalAlignment = "Center",
+                        actions = {
+                            {
+                                type = "Action.Submit",
+                                title = buttonText,
+                                id = buttonId,
+                                style = styleName == "danger" and "destructive" or 
+                                       (styleName == "success" and "positive" or "default"),
+                                color = style.textColor == "#FFFFFF" and "light" or "dark"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        schema = "http://adaptivecards.io/schemas/adaptive-card.json",
+        version = "1.6"
+    }
+    
+    -- Apply background color from style
+    adaptiveCard.body[1].style = style.backgroundColor
+    
+    return adaptiveCard
+end
