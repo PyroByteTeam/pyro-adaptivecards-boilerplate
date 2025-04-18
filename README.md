@@ -1,6 +1,8 @@
 [![GitBook](https://img.shields.io/badge/GitBook-%23000000.svg?style=for-the-badge&logo=gitbook&logoColor=white)](https://pyrobyte.gitbook.io/docs/)
 ![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white)
 
+![GIF](https://i.imgur.com/FejAyRg.gif)
+
 # PyroByte Adaptive Cards Boilerplate
 
 A simple boilerplate for implementing Adaptive Cards in FiveM scripts during the player connection process (deferrals).
